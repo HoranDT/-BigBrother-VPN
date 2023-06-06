@@ -1,0 +1,22 @@
+{% extends "bigbrother/base_generic.html" %}
+
+
+{% block content %}
+<div class="register-container">
+    <h1>Join BigBrother VPN</h1>
+    <h2>"War is peace. Freedom is slavery. Ignorance is strength."</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="fieldWrapper">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {{ field.errors }}
+        </div>
+        {% endfor %}
+        <button type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}
+
+

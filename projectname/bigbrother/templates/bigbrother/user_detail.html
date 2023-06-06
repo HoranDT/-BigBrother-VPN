@@ -1,0 +1,9 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>User Detail</h1>
+  <p>Username: {{ user.username }}</p>
+  <p>Password: *****</p>
+  <a href="{% url 'change_password' %}">Change Password</a>
+{% endblock %}
+

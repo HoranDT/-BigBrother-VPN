@@ -1,0 +1,18 @@
+{% extends "bigbrother/base_generic.html" %}
+
+{% block content %}
+<div class="login-container">
+    <h1>Welcome to BigBrother VPN</h1>
+    <h2>"Big Brother is watching"</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        {{ form.username }}
+        <label for="password">Password:</label>
+        {{ form.password }}
+        <button type="submit">Login</button>
+    </form>
+    <p>New user? <a href="{% url 'register' %}">Click here</a> to register.</p>
+</div>
+{% endblock %}
+

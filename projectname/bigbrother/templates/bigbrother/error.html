@@ -1,0 +1,15 @@
+{% extends "bigbrother/base_generic.html" %}
+
+{% block content %}
+<div class="error-container">
+    <h1>Big Brother Error</h1>
+    <h2>"Big Brother is watching"</h2>
+    {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+            {% for error in form.non_field_errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

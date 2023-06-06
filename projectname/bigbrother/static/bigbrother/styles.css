@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.login-container, .register-container {
+    text-align: center;
+    padding-top: 50px;
+}
+
+form {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    color: red;
+}
+
+input[type="text"], input[type="password"] {
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+button {
+    background-color: red;
+    color: white;

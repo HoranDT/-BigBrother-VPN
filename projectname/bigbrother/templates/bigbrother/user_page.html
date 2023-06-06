@@ -1,0 +1,16 @@
+{% extends "bigbrother/base_generic.html" %}
+
+{% block content %}
+<div class="user-container">
+    <h1>Welcome, {{ user.username }}</h1>
+    <a href="{% url 'user_detail' user.id %}">User Details</a>
+    <div class="vpn-status">
+        <h2>Your VPN status is: {% if vpn_status == 'Connected' %}Connected{% else %}Not connected{% endif %}</h2>
+        <form method="post" action="{% url 'toggle_vpn' %}">
+            {% csrf_token %}
+            <button type="submit">{% if vpn_status == 'Connected' %}Turn Off{% else %}Turn On{% endif %}</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
